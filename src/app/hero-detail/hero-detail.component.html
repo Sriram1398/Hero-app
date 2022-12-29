@@ -1,0 +1,18 @@
+<div *ngIf="hero">
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div>
+    <span>id: {{ hero.id }}</span>
+  </div>
+  <div>
+    <label for="name">Hero Name:</label>
+    <input
+      #heroName="ngModel"
+      type="text"
+      name="heroName"
+      id="name"
+      (keydown)="printMsg(heroName.value)"
+      [(ngModel)]="hero.name"
+    />
+  </div>
+  <button type="button" (click)="goBack()">Back</button>
+</div>
